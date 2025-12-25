@@ -6,7 +6,7 @@ const certSchema = new mongoose.Schema({
   id: String,
   date: String,
   link: String,
-  logo: String,
+  image: String,
 });
 
 const certificates = mongoose.model('Certificates', certSchema)
