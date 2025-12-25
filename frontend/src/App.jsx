@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './Index.css';
+import './index.css';
 import Hero_bg from './Components/Hero_bg';
 import Hero from './Components/Hero';
 import Overview from './Components/Overview';
