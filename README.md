@@ -74,7 +74,7 @@ Personal-Portfolio/
 ## 🌐 Live Demo
 
 🔗 **Production URL:**  
-(Add your live link here)
+https://personal-portfolio-v1-delta.vercel.app/
 
 ---
 
@@ -91,7 +91,7 @@ Feel free to:
 ## 📬 Connect With Me
 
 - GitHub: https://github.com/Harshkamboj11  
-- LinkedIn: (add your LinkedIn profile)
+- LinkedIn: https://www.linkedin.com/in/harshkumar11/
 
 ---
 
