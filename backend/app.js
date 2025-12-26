@@ -6,8 +6,9 @@ app.use(
   cors({
     origin: [
       'http://localhost:5173',
-      'https://personal-portfolio-v1-delta.vercel.app/',
+      'https://personal-portfolio-v1-delta.vercel.app',
     ],
+    credentials: true,
   })
 );
 app.use(express.json());
