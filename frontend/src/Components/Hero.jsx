@@ -9,7 +9,7 @@ import { AuroraTextEffect } from './lightswind/aurora-text-effect';
 import { ShinyText } from './lightswind/shiny-text';
 import { GradientButton } from './lightswind/gradient-button';
 import { TypingText } from './lightswind/TypingText';
-import { Typewriter } from './lib/Typewriter.jsx';
+import { Typewriter } from './lib/typewriter';
 
 /* ------------------ Animations ------------------ */
 
