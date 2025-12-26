@@ -63,14 +63,14 @@ const Overview = () => {
 
   return (
     <motion.section
-      className="w-full flex flex-col px-6 lg:px-15 mt-30 mb-14"
+      className="w-full flex flex-col px-6 lg:px-15 mt-19 mb-14"
       initial={{ opacity: 0, y: 40, filter: 'blur(1px)' }}
       whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
       viewport={{ once: true, amount: 0.25 }}
       transition={{ duration: 1.1, ease: 'easeOut' }}
     >
       {/* Text Section */}
-      <div className="max-w-4xl mb-10">
+      <div className="max-w-4xl ml-18 mb-10">
         <motion.h3
           className="opacity-50"
           initial={{ opacity: 0, x: -32 }}
@@ -159,7 +159,7 @@ const Overview = () => {
 
       {/* Cards */}
       <motion.div
-        className="flex flex-wrap gap-10 mt-10"
+        className="flex flex-wrap ml-18 gap-10 mt-10"
         variants={parentStagger}
         initial="hidden"
         whileInView="show"
