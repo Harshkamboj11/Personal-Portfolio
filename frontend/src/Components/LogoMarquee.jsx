@@ -1,79 +1,68 @@
-import { SlidingLogoMarquee } from "./lightswind/sliding-logo-marquee";
+import React from "react";
+
+// ✅ exact case + extension
+import { SlidingLogoMarquee } from "./lightswind/SlidingLogoMarquee.jsx";
+
+// ✅ logo imports (paths must match EXACTLY)
 import css from "./logos/css.png";
 import framer from "./logos/framer.png";
 import github from "./logos/github.png";
 import html from "./logos/html.png";
+import js from "./logos/js.png";
 import linkedin from "./logos/linkedin.png";
 import mongo from "./logos/MongoDB.png";
 import next from "./logos/next.png";
 import node from "./logos/node.png";
 import react from "./logos/react.png";
 import tailwind from "./logos/tailwind.png";
-import js from "./logos/js.png";
+
+/* ------------------ Logo Data ------------------ */
 
 const logos = [
-  {
-    id: "1",
-    content: <img src={css} alt="Logo" className="h-15 filter invert" />,
-  },
-  {
-    id: "2",
-    content: <img src={framer} alt="Logo" className="h-15 filter invert" />,
-  },
-  {
-    id: "3",
-    content: <img src={github} alt="Logo" className="h-15 filter invert" />,
-  },
-  {
-    id: "4",
-    content: <img src={html} alt="Logo" className="h-15 filter invert" />,
-  },
-  {
-    id: "5",
-    content: <img src={js} alt="Logo" className="h-15 filter invert" />,
-  },
-  {
-    id: "6",
-    content: <img src={linkedin} alt="Logo" className="h-15 filter invert" />,
-  },
-  {
-    id: "7",
-    content: <img src={mongo} alt="Logo" className="h-15" />,
-  },
-  {
-    id: "8",
-    content: <img src={next} alt="Logo" className="h-15 filter invert" />,
-  },
-  {
-    id: "9",
-    content: <img src={node} alt="Logo" className="h-15 " />,
-  },
-  {
-    id: "10",
-    content: <img src={react} alt="Logo" className="h-15 filter invert" />,
-  },
-  {
-    id: "11",
-    content: <img src={tailwind} alt="Logo" className="h-15 filter invert" />,
-  },
-];
+  { id: "1", src: css, invert: true },
+  { id: "2", src: framer, invert: true },
+  { id: "3", src: github, invert: true },
+  { id: "4", src: html, invert: true },
+  { id: "5", src: js, invert: true },
+  { id: "6", src: linkedin, invert: true },
+  { id: "7", src: mongo, invert: false },
+  { id: "8", src: next, invert: true },
+  { id: "9", src: node, invert: false },
+  { id: "10", src: react, invert: true },
+  { id: "11", src: tailwind, invert: true },
+].map((logo) => ({
+  id: logo.id,
+  content: (
+    <img
+      src={logo.src}
+      alt="technology logo"
+      className={`h-[60px] ${logo.invert ? "invert" : ""}`}
+      loading="lazy"
+      draggable={false}
+    />
+  ),
+}));
 
-export default function LogoMarquee() {
+/* ------------------ Component ------------------ */
+
+const LogoMarquee = () => {
   return (
-    <div className="text-3xl ml-25 mr-25 bg-black p-6 ">
+    <section className="bg-black p-6 mx-6 lg:mx-25 text-3xl">
       <div className="mb-25 -mt-10">
         <SlidingLogoMarquee
           items={logos}
           speed={40}
           height="100px"
-          enableBlur={true}
+          enableBlur
           blurIntensity={2}
-          pauseOnHover={true}
-          showGridBackground={true}
+          pauseOnHover
+          showGridBackground
           showControls={false}
           onItemClick={(item) => console.log("Clicked:", item.id)}
         />
       </div>
-    </div>
+    </section>
   );
-}
+};
+
+export default LogoMarquee;

@@ -1,35 +1,34 @@
-import React from 'react';
-import '../Index.css';
-import 'boxicons/css/boxicons.min.css';
-import { useState } from 'react';
-import { HamburgerMenuOverlay } from './lightswind/HamburgerMenuOverlay';
-import { motion } from 'motion/react';
+import React, { useState } from "react";
+import "../index.css"; // ✅ case-safe (make sure file name is index.css)
+import "boxicons/css/boxicons.min.css";
+import { motion } from "framer-motion"; // ✅ FIXED (was motion/react ❌)
+import { HamburgerMenuOverlay } from "./lightswind/HamburgerMenuOverlay.jsx"; // ✅ exact case + extension
+
+/* ------------------ Component ------------------ */
 
 const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
-    section?.scrollIntoView({ behavior: 'smooth' });
+    section?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const toggle = () => {
-    setToggleMenu((prev) => !prev);
-  };
+  const toggle = () => setToggleMenu((prev) => !prev);
 
   const menuItems = [
-    { label: 'Home', onClick: () => scrollToSection('home') },
-    { label: 'Projects', onClick: () => scrollToSection('projects') },
-    { label: 'About', onClick: () => scrollToSection('about') },
-    { label: 'Contact', onClick: () => scrollToSection('contact') },
-    { label: 'Resume', onClick: () => window.open('/resume.pdf', '_blank') },
+    { label: "Home", onClick: () => scrollToSection("home") },
+    { label: "Projects", onClick: () => scrollToSection("projects") },
+    { label: "About", onClick: () => scrollToSection("about") },
+    { label: "Contact", onClick: () => scrollToSection("contact") },
+    { label: "Resume", onClick: () => window.open("/resume.pdf", "_blank") },
   ];
 
   const list = [
-    { name: 'Home', id: 'home' },
-    { name: 'Projects', id: 'projects' },
-    { name: 'About', id: 'about' },
-    { name: 'Contact', id: 'contact' },
+    { name: "Home", id: "home" },
+    { name: "Projects", id: "projects" },
+    { name: "About", id: "about" },
+    { name: "Contact", id: "contact" },
   ];
 
   const containerVariants = {
@@ -48,7 +47,7 @@ const Header = () => {
   return (
     <header
       className="
-        fixed top-6 left-22 right-22 z-50
+        fixed top-6 left-6 right-6 z-50
         flex items-center justify-between
         px-3 py-3 sm:px-6 lg:px-14
         rounded-full backdrop-blur-md
@@ -57,18 +56,14 @@ const Header = () => {
     >
       {/* Desktop Navigation */}
       <motion.ul
-        className="
-          hidden lg:flex items-center
-          gap-10 xl:gap-16
-          ml-4
-        "
+        className="hidden lg:flex items-center gap-10 xl:gap-16 ml-4"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        {list.map((item, index) => (
+        {list.map((item) => (
           <motion.li
-            key={index}
+            key={item.id}
             onClick={() => scrollToSection(item.id)}
             className="
               relative cursor-pointer text-white text-sm xl:text-base
@@ -88,8 +83,7 @@ const Header = () => {
       <button
         className="
           lg:hidden z-50
-          p-2 rounded-full
-          text-3xl
+          p-2 rounded-full text-3xl
           transition-all duration-200
           hover:bg-black hover:text-[#e99b63]
         "
@@ -109,10 +103,10 @@ const Header = () => {
 
       {/* Resume Button */}
       <motion.button
-        onClick={() => window.open('/resume.pdf', '_blank')}
+        onClick={() => window.open("/resume.pdf", "_blank")}
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ type: 'spring', stiffness: 120 }}
+        transition={{ type: "spring", stiffness: 120 }}
         className="
           hidden sm:block
           bg-[#a7a7a7] text-black
@@ -125,7 +119,7 @@ const Header = () => {
         Resume
       </motion.button>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       {toggleMenu && (
         <div
           className="
@@ -137,9 +131,9 @@ const Header = () => {
         >
           <nav>
             <ul className="flex flex-col gap-8 text-lg text-white text-center">
-              {list.map((item, index) => (
+              {list.map((item) => (
                 <li
-                  key={index}
+                  key={item.id}
                   onClick={() => {
                     scrollToSection(item.id);
                     toggle();
