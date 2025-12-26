@@ -1,4 +1,4 @@
-import '../Index.css';
+import '../index.css';
 import 'boxicons/css/boxicons.min.css';
 import { AuroraTextEffect } from './lightswind/aurora-text-effect';
 import { ShinyText } from './lightswind/shiny-text';
