@@ -4,7 +4,10 @@ const app = express();
 
 app.use(
   cors({
-    origin: ['http://localhost:5173', 'https://portfolio-backend-ihku.onrender.com'],
+    origin: [
+      'http://localhost:5173',
+      'https://harsh-portfolio-seven-ecru.vercel.app/',
+    ],
   })
 );
 app.use(express.json());
