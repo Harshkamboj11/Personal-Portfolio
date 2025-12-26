@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+    "check-import-case": "node ./scripts/check-import-case.js",
+    "ci": "npm run check-import-case && npm run build",
     "preview": "vite preview"
   },
   "dependencies": {
