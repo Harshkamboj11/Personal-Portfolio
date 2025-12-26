@@ -6,7 +6,7 @@ app.use(
   cors({
     origin: [
       'http://localhost:5173',
-      'https://harsh-portfolio-seven-ecru.vercel.app/',
+      'https://personal-portfolio-v1-delta.vercel.app/',
     ],
   })
 );
