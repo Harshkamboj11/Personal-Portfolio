@@ -4,7 +4,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: ['http://localhost:5173', 'https://portfolio-backend-ihku.onrender.com'],
   })
 );
 app.use(express.json());

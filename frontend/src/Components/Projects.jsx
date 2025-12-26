@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 // ✅ exact case + extension (prod-safe)
-import { TeamCarousel } from "./lightswind/TeamCarousel.jsx";
+import { TeamCarousel } from './lightswind/team-carousel';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -18,7 +18,7 @@ const Projects = () => {
         );
 
         if (!response.ok) {
-          throw new Error("Failed to fetch projects");
+          throw new Error('Failed to fetch projects');
         }
 
         const data = await response.json();
@@ -39,8 +39,8 @@ const Projects = () => {
 
         setProjects(formattedProjects);
       } catch (error) {
-        if (error.name !== "AbortError") {
-          console.error("Error fetching projects:", error);
+        if (error.name !== 'AbortError') {
+          console.error('Error fetching projects:', error);
         }
       }
     };
@@ -53,10 +53,10 @@ const Projects = () => {
   return (
     <section>
       <motion.div
-        initial={{ y: 50, opacity: 0, scale: 0.98, filter: "blur(10px)" }}
-        whileInView={{ y: 0, opacity: 1, scale: 1, filter: "blur(0px)" }}
+        initial={{ y: 50, opacity: 0, scale: 0.98, filter: 'blur(10px)' }}
+        whileInView={{ y: 0, opacity: 1, scale: 1, filter: 'blur(0px)' }}
         viewport={{ once: true, amount: 0.4 }}
-        transition={{ duration: 0.9, ease: "easeOut" }}
+        transition={{ duration: 0.9, ease: 'easeOut' }}
         className="mb-25"
       >
         <TeamCarousel

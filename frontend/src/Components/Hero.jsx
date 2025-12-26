@@ -1,15 +1,15 @@
-import "../index.css"; // ✅ case-safe (must be index.css)
-import "boxicons/css/boxicons.min.css";
+import '../index.css'; // ✅ case-safe (must be index.css)
+import 'boxicons/css/boxicons.min.css';
 
-import { motion } from "framer-motion";
-import Spline from "@splinetool/react-spline";
+import { motion } from 'framer-motion';
+import Spline from '@splinetool/react-spline';
 
 // ✅ explicit extensions + exact casing
-import { AuroraTextEffect } from "./lightswind/AuroraTextEffect.jsx";
-import { ShinyText } from "./lightswind/ShinyText.jsx";
-import { GradientButton } from "./lightswind/GradientButton.jsx";
-import { TypingText } from "./lightswind/TypingText.jsx";
-import { Typewriter } from "./lib/Typewriter.jsx";
+import { AuroraTextEffect } from './lightswind/aurora-text-effect';
+import { ShinyText } from './lightswind/shiny-text';
+import { GradientButton } from './lightswind/gradient-button';
+import { TypingText } from './lightswind/TypingText';
+import { Typewriter } from './lib/Typewriter.jsx';
 
 /* ------------------ Animations ------------------ */
 
@@ -25,7 +25,7 @@ const fadeUp = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.9, ease: "easeOut" },
+    transition: { duration: 0.9, ease: 'easeOut' },
   },
 };
 
@@ -42,10 +42,7 @@ const Hero = () => {
       {/* Left Content */}
       <motion.div className="ml-6 lg:ml-25 z-10" variants={container}>
         <div className="w-full max-w-xl flex flex-col mt-40">
-          <motion.h3
-            className="text-base mt-12 mb-[-8%]"
-            variants={fadeUp}
-          >
+          <motion.h3 className="text-base mt-12 mb-[-8%]" variants={fadeUp}>
             Hi, I am
           </motion.h3>
 
@@ -75,8 +72,8 @@ const Hero = () => {
               glowSize={10}
               onClick={() =>
                 document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
+                  .getElementById('contact')
+                  ?.scrollIntoView({ behavior: 'smooth' })
               }
             >
               Hire me

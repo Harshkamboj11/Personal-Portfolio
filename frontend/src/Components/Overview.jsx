@@ -1,20 +1,20 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react';
+import { motion } from 'framer-motion';
 
 // ✅ exact case + extension
-import { InteractiveGradient } from "./lightswind/InteractiveGradient.jsx";
+import { InteractiveGradient } from './lightswind/interactive-gradient';
 
 /* ------------------ Animations ------------------ */
 
 const cardsFadeIn = {
-  hidden: { opacity: 0, y: 50, filter: "blur(8px)" },
+  hidden: { opacity: 0, y: 50, filter: 'blur(8px)' },
   show: (i = 1) => ({
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
+    filter: 'blur(0px)',
     transition: {
       duration: 0.9,
-      ease: "easeOut",
+      ease: 'easeOut',
       delay: i * 0.18,
     },
   }),
@@ -35,39 +35,39 @@ const parentStagger = {
 const Overview = () => {
   const skills = [
     {
-      heading: "🧠 Full-Stack Problem Solver",
+      heading: '🧠 Full-Stack Problem Solver',
       description:
-        "Developing end-to-end applications using Node.js, Express, MongoDB, and MySQL, focusing on real-world logic and scalability.",
-      tagline: "~Turning complex ideas into smooth user experiences.",
+        'Developing end-to-end applications using Node.js, Express, MongoDB, and MySQL, focusing on real-world logic and scalability.',
+      tagline: '~Turning complex ideas into smooth user experiences.',
     },
     {
-      heading: "⚡ Modern Frontend Developer",
+      heading: '⚡ Modern Frontend Developer',
       description:
-        "Building clean, responsive, and interactive UIs using React and Tailwind CSS, with strong attention to UX and performance.",
-      tagline: "~Powering applications with clean and efficient data flow.",
+        'Building clean, responsive, and interactive UIs using React and Tailwind CSS, with strong attention to UX and performance.',
+      tagline: '~Powering applications with clean and efficient data flow.',
     },
     {
-      heading: "🎨 Creative + Technical Thinker",
+      heading: '🎨 Creative + Technical Thinker',
       description:
-        "Blending development with creativity through video editing and basic 3D tools to enhance user experience and visual storytelling.",
+        'Blending development with creativity through video editing and basic 3D tools to enhance user experience and visual storytelling.',
       tagline:
-        "~Merging tech & creativity to deliver impactful digital products.",
+        '~Merging tech & creativity to deliver impactful digital products.',
     },
     {
-      heading: "🚀 Consistent Learner",
+      heading: '🚀 Consistent Learner',
       description:
-        "Always learning by building projects, exploring new tech, and improving code quality through hands-on experience.",
-      tagline: "~Growth mindset + hands-on execution.",
+        'Always learning by building projects, exploring new tech, and improving code quality through hands-on experience.',
+      tagline: '~Growth mindset + hands-on execution.',
     },
   ];
 
   return (
     <motion.section
       className="w-full flex flex-col px-6 lg:px-15 mt-30 mb-14"
-      initial={{ opacity: 0, y: 40, filter: "blur(1px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      initial={{ opacity: 0, y: 40, filter: 'blur(1px)' }}
+      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
       viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 1.1, ease: "easeOut" }}
+      transition={{ duration: 1.1, ease: 'easeOut' }}
     >
       {/* Text Section */}
       <div className="max-w-4xl mb-10">
@@ -99,8 +99,8 @@ const Overview = () => {
           transition={{ duration: 0.8 }}
         >
           I’m a second-year B.Tech student who loves building real-world web
-          applications from scratch — from clean user interfaces to solid backend
-          logic.
+          applications from scratch — from clean user interfaces to solid
+          backend logic.
         </motion.p>
 
         <motion.p
@@ -134,12 +134,26 @@ const Overview = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p><span className="text-white">Frontend:</span> React, JavaScript, Tailwind CSS</p>
-          <p><span className="text-white">Backend:</span> Node.js, Express.js</p>
-          <p><span className="text-white">Databases:</span> MongoDB, MySQL</p>
-          <p><span className="text-white">Auth & APIs:</span> JWT, REST APIs</p>
-          <p><span className="text-white">Tools:</span> Git, GitHub, Postman</p>
-          <p><span className="text-white">Creative:</span> Premiere Pro, After Effects, Blender (basic)</p>
+          <p>
+            <span className="text-white">Frontend:</span> React, JavaScript,
+            Tailwind CSS
+          </p>
+          <p>
+            <span className="text-white">Backend:</span> Node.js, Express.js
+          </p>
+          <p>
+            <span className="text-white">Databases:</span> MongoDB, MySQL
+          </p>
+          <p>
+            <span className="text-white">Auth & APIs:</span> JWT, REST APIs
+          </p>
+          <p>
+            <span className="text-white">Tools:</span> Git, GitHub, Postman
+          </p>
+          <p>
+            <span className="text-white">Creative:</span> Premiere Pro, After
+            Effects, Blender (basic)
+          </p>
         </motion.div>
       </div>
 
@@ -156,8 +170,8 @@ const Overview = () => {
             key={skill.heading}
             variants={cardsFadeIn}
             custom={index}
-            whileHover={{ scale: 1.04, boxShadow: "0 8px 40px #e99b6388" }}
-            transition={{ type: "spring", stiffness: 200, damping: 20 }}
+            whileHover={{ scale: 1.04, boxShadow: '0 8px 40px #e99b6388' }}
+            transition={{ type: 'spring', stiffness: 200, damping: 20 }}
           >
             <InteractiveGradient
               className="w-72 h-[360px] cursor-pointer"

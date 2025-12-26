@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import Globe from "./lightswind/Globe.jsx"; // ✅ exact case + extension
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import Globe from './lightswind/globe'; // ✅ exact case + extension
 
 /* ------------------ Component ------------------ */
 
 const ContactForm = () => {
   const [form, setForm] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
   });
 
   const [errors, setErrors] = useState({});
@@ -21,14 +21,14 @@ const ContactForm = () => {
   const validate = () => {
     const newErrors = {};
 
-    if (!form.name.trim()) newErrors.name = "Name is required.";
+    if (!form.name.trim()) newErrors.name = 'Name is required.';
     if (!form.email.trim()) {
-      newErrors.email = "Email is required.";
+      newErrors.email = 'Email is required.';
     } else if (!/\S+@\S+\.\S+/.test(form.email)) {
-      newErrors.email = "Invalid email.";
+      newErrors.email = 'Invalid email.';
     }
-    if (!form.subject.trim()) newErrors.subject = "Subject is required.";
-    if (!form.message.trim()) newErrors.message = "Message is required.";
+    if (!form.subject.trim()) newErrors.subject = 'Subject is required.';
+    if (!form.message.trim()) newErrors.message = 'Message is required.';
 
     return newErrors;
   };
@@ -56,8 +56,8 @@ const ContactForm = () => {
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/create-new-contact`,
         {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(form),
         }
       );
@@ -68,16 +68,16 @@ const ContactForm = () => {
 
       setSubmitted(true);
       setForm({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
       });
 
       setTimeout(() => setSubmitted(false), 5000);
     } catch (error) {
-      console.error("Contact form error:", error);
-      alert("Something went wrong. Please try again later.");
+      console.error('Contact form error:', error);
+      alert('Something went wrong. Please try again later.');
     } finally {
       setLoading(false);
     }
@@ -88,26 +88,26 @@ const ContactForm = () => {
   return (
     <div className="flex items-center justify-center min-h-screen py-8 bg-black">
       <motion.div
-        initial={{ opacity: 0, scale: 0.95, boxShadow: "0 0 0px #e99b63" }}
+        initial={{ opacity: 0, scale: 0.95, boxShadow: '0 0 0px #e99b63' }}
         whileInView={{
           opacity: 1,
           scale: 1,
           boxShadow: [
-            "0 0 20px 4px #e99b63",
-            "0 0 30px 6px #fa8128",
-            "0 0 20px 4px #e99b63",
+            '0 0 20px 4px #e99b63',
+            '0 0 30px 6px #fa8128',
+            '0 0 20px 4px #e99b63',
           ],
         }}
         viewport={{ once: true, amount: 0.5 }}
         transition={{
           duration: 0.8,
-          type: "spring",
+          type: 'spring',
           bounce: 0.3,
           boxShadow: {
             duration: 2,
             repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut",
+            repeatType: 'reverse',
+            ease: 'easeInOut',
           },
         }}
         className="bg-[#181818] text-white rounded-2xl p-8 md:p-12 flex flex-col md:flex-row gap-12 max-w-4xl w-full border-2 border-[#e99b63]"
@@ -125,7 +125,7 @@ const ContactForm = () => {
           )}
 
           <form onSubmit={handleSubmit} noValidate>
-            {["name", "email", "subject"].map((field) => (
+            {['name', 'email', 'subject'].map((field) => (
               <div key={field} className="mb-4">
                 <label
                   htmlFor={field}
@@ -136,16 +136,14 @@ const ContactForm = () => {
                 <input
                   id={field}
                   name={field}
-                  type={field === "email" ? "email" : "text"}
+                  type={field === 'email' ? 'email' : 'text'}
                   value={form[field]}
                   onChange={handleChange}
                   className="w-full py-2 px-3 rounded bg-[#282828] border border-[#e99b63] outline-none focus:ring-2 focus:ring-[#e99b63]"
                   autoComplete="off"
                 />
                 {errors[field] && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {errors[field]}
-                  </p>
+                  <p className="text-red-500 text-sm mt-1">{errors[field]}</p>
                 )}
               </div>
             ))}
@@ -166,9 +164,7 @@ const ContactForm = () => {
                 className="w-full py-2 px-3 rounded bg-[#282828] border border-[#e99b63] outline-none focus:ring-2 focus:ring-[#e99b63]"
               />
               {errors.message && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.message}
-                </p>
+                <p className="text-red-500 text-sm mt-1">{errors.message}</p>
               )}
             </div>
 
@@ -176,17 +172,15 @@ const ContactForm = () => {
               type="submit"
               disabled={loading}
               whileHover={
-                !loading
-                  ? { scale: 1.05, boxShadow: "0 0 16px #e99b63" }
-                  : {}
+                !loading ? { scale: 1.05, boxShadow: '0 0 16px #e99b63' } : {}
               }
               className={`w-full py-2 rounded-xl font-bold text-lg transition ${
                 loading
-                  ? "bg-gray-600 cursor-not-allowed text-gray-400"
-                  : "bg-[#e99b63] text-black"
+                  ? 'bg-gray-600 cursor-not-allowed text-gray-400'
+                  : 'bg-[#e99b63] text-black'
               }`}
             >
-              {loading ? "Sending..." : "Send Message"}
+              {loading ? 'Sending...' : 'Send Message'}
             </motion.button>
           </form>
         </div>

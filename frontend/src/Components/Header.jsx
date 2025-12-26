@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import "../index.css"; // ✅ case-safe (make sure file name is index.css)
-import "boxicons/css/boxicons.min.css";
-import { motion } from "framer-motion"; // ✅ FIXED (was motion/react ❌)
-import { HamburgerMenuOverlay } from "./lightswind/HamburgerMenuOverlay.jsx"; // ✅ exact case + extension
+import React, { useState } from 'react';
+import '../index.css'; // ✅ case-safe (make sure file name is index.css)
+import 'boxicons/css/boxicons.min.css';
+import { motion } from 'framer-motion'; // ✅ FIXED (was motion/react ❌)
+import { HamburgerMenuOverlay } from './lightswind/HamburgerMenuOverlay'; // ✅ exact case + extension
 
 /* ------------------ Component ------------------ */
 
@@ -11,24 +11,24 @@ const Header = () => {
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
-    section?.scrollIntoView({ behavior: "smooth" });
+    section?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const toggle = () => setToggleMenu((prev) => !prev);
 
   const menuItems = [
-    { label: "Home", onClick: () => scrollToSection("home") },
-    { label: "Projects", onClick: () => scrollToSection("projects") },
-    { label: "About", onClick: () => scrollToSection("about") },
-    { label: "Contact", onClick: () => scrollToSection("contact") },
-    { label: "Resume", onClick: () => window.open("/resume.pdf", "_blank") },
+    { label: 'Home', onClick: () => scrollToSection('home') },
+    { label: 'Projects', onClick: () => scrollToSection('projects') },
+    { label: 'About', onClick: () => scrollToSection('about') },
+    { label: 'Contact', onClick: () => scrollToSection('contact') },
+    { label: 'Resume', onClick: () => window.open('/resume.pdf', '_blank') },
   ];
 
   const list = [
-    { name: "Home", id: "home" },
-    { name: "Projects", id: "projects" },
-    { name: "About", id: "about" },
-    { name: "Contact", id: "contact" },
+    { name: 'Home', id: 'home' },
+    { name: 'Projects', id: 'projects' },
+    { name: 'About', id: 'about' },
+    { name: 'Contact', id: 'contact' },
   ];
 
   const containerVariants = {
@@ -103,10 +103,10 @@ const Header = () => {
 
       {/* Resume Button */}
       <motion.button
-        onClick={() => window.open("/resume.pdf", "_blank")}
+        onClick={() => window.open('/resume.pdf', '_blank')}
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ type: "spring", stiffness: 120 }}
+        transition={{ type: 'spring', stiffness: 120 }}
         className="
           hidden sm:block
           bg-[#a7a7a7] text-black

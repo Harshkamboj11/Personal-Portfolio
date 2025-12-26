@@ -1,42 +1,42 @@
-import React from "react";
+import React from 'react';
 
-// ✅ exact case + extension
-import { SlidingLogoMarquee } from "./lightswind/SlidingLogoMarquee.jsx";
+// Import the actual implementation (case-sensitive)
+import { SlidingLogoMarquee } from './lightswind/sliding-logo-marquee';
 
 // ✅ logo imports (paths must match EXACTLY)
-import css from "./logos/css.png";
-import framer from "./logos/framer.png";
-import github from "./logos/github.png";
-import html from "./logos/html.png";
-import js from "./logos/js.png";
-import linkedin from "./logos/linkedin.png";
-import mongo from "./logos/MongoDB.png";
-import next from "./logos/next.png";
-import node from "./logos/node.png";
-import react from "./logos/react.png";
-import tailwind from "./logos/tailwind.png";
+import css from './logos/css.png';
+import framer from './logos/framer.png';
+import github from './logos/github.png';
+import html from './logos/html.png';
+import js from './logos/js.png';
+import linkedin from './logos/linkedin.png';
+import mongo from './logos/MongoDB.png';
+import next from './logos/next.png';
+import node from './logos/node.png';
+import react from './logos/react.png';
+import tailwind from './logos/tailwind.png';
 
 /* ------------------ Logo Data ------------------ */
 
 const logos = [
-  { id: "1", src: css, invert: true },
-  { id: "2", src: framer, invert: true },
-  { id: "3", src: github, invert: true },
-  { id: "4", src: html, invert: true },
-  { id: "5", src: js, invert: true },
-  { id: "6", src: linkedin, invert: true },
-  { id: "7", src: mongo, invert: false },
-  { id: "8", src: next, invert: true },
-  { id: "9", src: node, invert: false },
-  { id: "10", src: react, invert: true },
-  { id: "11", src: tailwind, invert: true },
+  { id: '1', src: css, invert: true },
+  { id: '2', src: framer, invert: true },
+  { id: '3', src: github, invert: true },
+  { id: '4', src: html, invert: true },
+  { id: '5', src: js, invert: true },
+  { id: '6', src: linkedin, invert: true },
+  { id: '7', src: mongo, invert: false },
+  { id: '8', src: next, invert: true },
+  { id: '9', src: node, invert: false },
+  { id: '10', src: react, invert: true },
+  { id: '11', src: tailwind, invert: true },
 ].map((logo) => ({
   id: logo.id,
   content: (
     <img
       src={logo.src}
       alt="technology logo"
-      className={`h-[60px] ${logo.invert ? "invert" : ""}`}
+      className={`h-[60px] ${logo.invert ? 'invert' : ''}`}
       loading="lazy"
       draggable={false}
     />
@@ -58,7 +58,7 @@ const LogoMarquee = () => {
           pauseOnHover
           showGridBackground
           showControls={false}
-          onItemClick={(item) => console.log("Clicked:", item.id)}
+          onItemClick={(item) => console.log('Clicked:', item.id)}
         />
       </div>
     </section>
